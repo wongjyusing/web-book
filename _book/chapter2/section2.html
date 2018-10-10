@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Flask · GitBook</title>
+        <title>Tornado · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="section4.md" />
+    <link rel="next" href="section3.html" />
     
     
-    <link rel="prev" href="section2.html" />
+    <link rel="prev" href="section1.html" />
     
 
     </head>
@@ -186,9 +186,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../chapter1/">
             
-                <a href="./">
+                <a href="../chapter1/">
             
                     
                     使用模板
@@ -200,9 +200,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="section1.html">
+        <li class="chapter " data-level="1.4.1" data-path="../chapter1/section1.html">
             
-                <a href="section1.html">
+                <a href="../chapter1/section1.html">
             
                     
                     Django
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="section2.html">
+        <li class="chapter " data-level="1.4.2" data-path="../chapter1/section2.html">
             
-                <a href="section2.html">
+                <a href="../chapter1/section2.html">
             
                     
                     Tornado
@@ -226,9 +226,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="section3.html">
+        <li class="chapter " data-level="1.4.3" data-path="../chapter1/section3.html">
             
-                <a href="section3.html">
+                <a href="../chapter1/section3.html">
             
                     
                     Flask
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="section4.md">
+        <li class="chapter " data-level="1.4.4" data-path="../chapter1/section4.md">
             
                 <span>
             
@@ -257,9 +257,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../chapter2/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../chapter2/">
+                <a href="./">
             
                     
                     路由和传参
@@ -271,9 +271,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../chapter2/section1.html">
+        <li class="chapter " data-level="1.5.1" data-path="section1.html">
             
-                <a href="../chapter2/section1.html">
+                <a href="section1.html">
             
                     
                     Django
@@ -284,9 +284,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../chapter2/section2.html">
+        <li class="chapter active" data-level="1.5.2" data-path="section2.html">
             
-                <a href="../chapter2/section2.html">
+                <a href="section2.html">
             
                     
                     Tornado
@@ -297,9 +297,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../chapter2/section3.html">
+        <li class="chapter " data-level="1.5.3" data-path="section3.html">
             
-                <a href="../chapter2/section3.html">
+                <a href="section3.html">
             
                     
                     Flask
@@ -310,9 +310,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../chapter2/section4.html">
+        <li class="chapter " data-level="1.5.4" data-path="section4.html">
             
-                <a href="../chapter2/section4.html">
+                <a href="section4.html">
             
                     
                     总结
@@ -358,7 +358,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Flask</a>
+        <a href=".." >Tornado</a>
     </h1>
 </div>
 
@@ -373,30 +373,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="flask">Flask</h2>
-<p>&#x5728;&#x4F60;&#x5B58;&#x653E;flask&#x7684;hello&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<strong>templates</strong>&#x7684;&#x76EE;&#x5F55;&#x3002;<br>&#x628A;hello.html&#x590D;&#x5236;&#x5230;&#x91CC;&#x9762;&#x53BB;&#x3002;
-&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-bash">&#x251C;&#x2500;&#x2500; hello.py
-&#x251C;&#x2500;&#x2500; __pycache__
-&#x2502;   &#x2514;&#x2500;&#x2500; hello.cpython-36.pyc
-&#x2514;&#x2500;&#x2500; templates
-    &#x2514;&#x2500;&#x2500; hello.html
-
-2 directories, 3 files
-</code></pre>
-<p>hello.py&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x3002;</p>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask
-<span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> render_template
-
-app = Flask(__name__)
-
-<span class="hljs-meta">@app.route(&apos;/&apos;)</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello_world</span><span class="hljs-params">()</span>:</span>
-    <span class="hljs-comment">#return &apos;Hello, World!&apos;</span>
-    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&apos;hello.html&apos;</span>)
-</code></pre>
-<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>flask run</code><br>&#x5E76;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00;<code>http://127.0.0.1:5000/</code>&#x5373;&#x53EF;&#x770B;&#x5230;&#x6548;&#x679C;&#x3002;  </p>
-
+                                
                                 
                                 </section>
                             
@@ -423,12 +400,12 @@ app = Flask(__name__)
 
             
                 
-                <a href="section2.html" class="navigation navigation-prev " aria-label="Previous page: Tornado">
+                <a href="section1.html" class="navigation navigation-prev " aria-label="Previous page: Django">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="section4.md" class="navigation navigation-next " aria-label="Next page: 总结">
+                <a href="section3.html" class="navigation navigation-next " aria-label="Next page: Flask">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -439,7 +416,7 @@ app = Flask(__name__)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Flask","level":"1.4.3","depth":2,"next":{"title":"总结","level":"1.4.4","depth":2,"path":"chapter1/section4.md","ref":"chapter1/section4.md","articles":[]},"previous":{"title":"Tornado","level":"1.4.2","depth":2,"path":"chapter1/section2.md","ref":"chapter1/section2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section3.md","mtime":"2018-10-10T07:25:09.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-10T11:37:14.800Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tornado","level":"1.5.2","depth":2,"next":{"title":"Flask","level":"1.5.3","depth":2,"path":"chapter2/section3.md","ref":"chapter2/section3.md","articles":[]},"previous":{"title":"Django","level":"1.5.1","depth":2,"path":"chapter2/section1.md","ref":"chapter2/section1.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/section2.md","mtime":"2018-10-10T08:26:38.782Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-10T11:37:14.800Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
