@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Django · GitBook</title>
+        <title>总结 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="section2.html" />
+    <link rel="next" href="../chapter2/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="section3.html" />
     
 
     </head>
@@ -200,7 +200,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="section1.html">
+        <li class="chapter " data-level="1.4.1" data-path="section1.html">
             
                 <a href="section1.html">
             
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="section4.html">
+        <li class="chapter active" data-level="1.4.4" data-path="section4.html">
             
                 <a href="section4.html">
             
@@ -371,7 +371,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Django</a>
+        <a href=".." >总结</a>
     </h1>
 </div>
 
@@ -386,60 +386,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x4F7F;&#x7528;&#x6A21;&#x677F;">&#x4F7F;&#x7528;&#x6A21;&#x677F;</h2>
-<p>&#x9996;&#x5148;&#xFF0C;&#x628A;&#x4E0A;&#x4E00;&#x7AE0;&#x8282;&#x7684;learn&#x9879;&#x76EE;&#xFF0C;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x3002;<br>&#x5230;&#x4F60;&#x9700;&#x8981;&#x7EC3;&#x4E60;&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#x3002;<br>&#x628A;&#x4E0A;&#x4E00;&#x5C0F;&#x8282;&#x7684;hello.html&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;learn&#x4E2D;&#x7684;templates&#x76EE;&#x5F55;&#x4E0B;&#x3002;<br>&#x9879;&#x76EE;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-bash">.
-&#x251C;&#x2500;&#x2500; db.sqlite3
-&#x251C;&#x2500;&#x2500; hello
-&#x2502;   &#x251C;&#x2500;&#x2500; admin.py
-&#x2502;   &#x251C;&#x2500;&#x2500; apps.py
-&#x2502;   &#x251C;&#x2500;&#x2500; __init__.py
-&#x2502;   &#x251C;&#x2500;&#x2500; migrations
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; __init__.py
-&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; __pycache__
-&#x2502;   &#x2502;       &#x2514;&#x2500;&#x2500; __init__.cpython-36.pyc
-&#x2502;   &#x251C;&#x2500;&#x2500; models.py
-&#x2502;   &#x251C;&#x2500;&#x2500; __pycache__
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; admin.cpython-36.pyc
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; __init__.cpython-36.pyc
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; models.cpython-36.pyc
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; urls.cpython-36.pyc
-&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; views.cpython-36.pyc
-&#x2502;   &#x251C;&#x2500;&#x2500; tests.py
-&#x2502;   &#x251C;&#x2500;&#x2500; urls.py
-&#x2502;   &#x2514;&#x2500;&#x2500; views.py
-&#x251C;&#x2500;&#x2500; learn
-&#x2502;   &#x251C;&#x2500;&#x2500; __init__.py
-&#x2502;   &#x251C;&#x2500;&#x2500; __pycache__
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; __init__.cpython-36.pyc
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; settings.cpython-36.pyc
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; urls.cpython-36.pyc
-&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; wsgi.cpython-36.pyc
-&#x2502;   &#x251C;&#x2500;&#x2500; settings.py
-&#x2502;   &#x251C;&#x2500;&#x2500; urls.py
-&#x2502;   &#x2514;&#x2500;&#x2500; wsgi.py
-&#x251C;&#x2500;&#x2500; manage.py
-&#x251C;&#x2500;&#x2500; static
-&#x2514;&#x2500;&#x2500; templates
-    &#x2514;&#x2500;&#x2500; hello.html    <span class="hljs-comment"># &#x6A21;&#x677F;&#x6587;&#x4EF6;</span>
-
-8 directories, 25 files
-</code></pre>
-<h2 id="&#x5F00;&#x59CB;">&#x5F00;&#x59CB;</h2>
-<p>&#x6211;&#x4EEC;&#x8FD9;&#x6B21;&#x53EA;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5373;&#x53EF;&#x3002;<br>hello&#x76EE;&#x5F55;&#x4E0B;&#x7684;views.py&#x3002;  </p>
-<h3 id="viewspy">views.py</h3>
-<p>&#x5199;&#x5165;&#x4EE5;&#x4E0B;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render,HttpResponse
-
-<span class="hljs-comment"># Create your views here.</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(request)</span>:</span>
-    context = <span class="hljs-string">&apos;hello world&apos;</span>
-    <span class="hljs-comment">#return HttpResponse(context)</span>
-    <span class="hljs-comment"># &#x6CE8;&#x610F;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;request&#x662F;&#x5FC5;&#x987B;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</span>
-
-    <span class="hljs-keyword">return</span> render(request,<span class="hljs-string">&apos;hello.html&apos;</span>)
-</code></pre>
-<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>python manage.py runserver</code>&#x3002;<br>&#x5E76;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x6253;&#x5F00;<code>http://127.0.0.1:8000</code>&#x5373;&#x53EF;&#x770B;&#x5230;&#x6548;&#x679C;</p>
+                                <h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x672C;&#x7AE0;&#x8282;&#x7684;&#x76EE;&#x7684;&#x662F;&#x60F3;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#x3002;<br>&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x5E73;&#x65F6;&#x770B;&#x5230;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x52A8;&#x6001;&#x7684;&#x4E5F;&#x597D;&#xFF0C;&#x9759;&#x6001;&#x7684;&#x4E5F;&#x597D;&#x3002;<br>&#x53EA;&#x662F;&#x5728;&#x6E32;&#x67D3;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x7684;&#x5185;&#x5BB9;&#x3002;<br>&#x90A3;&#x4E48;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF1A;
+&#x5E73;&#x65F6;&#x6D4F;&#x89C8;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x5B83;&#x7684;&#x670D;&#x52A1;&#x5668;&#x662F;&#x4E0D;&#x662F;&#x91CC;&#x9762;&#x5B58;&#x653E;&#x7740;&#x4E00;&#x5806;html&#x6587;&#x4EF6;&#x5462;&#xFF1F;<br>&#x548C;&#x5728;&#x4ED6;&#x4EEC;&#x7684;&#x8DEF;&#x7531;&#x4E0A;&#x662F;&#x4E0D;&#x662F;&#x5199;&#x7740;&#x4E00;&#x5806;&#x8DEF;&#x5F84;&#x5462;&#xFF1F;&#xFF1F;  </p>
+<hr>
+<p>&#x7B54;&#x6848;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x4E0D;&#x662F;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x771F;&#x8981;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x7A0B;&#x5E8F;&#x5458;&#x6BCF;&#x5929;&#x7684;&#x5DE5;&#x4F5C;&#x90FD;&#x662F;&#x5199;&#x4E00;&#x5806;html&#x6587;&#x4EF6;&#xFF0C;&#x548C;&#x4FEE;&#x6539;&#x8DEF;&#x7531;&#x3002;<br>&#x60F3;&#x77E5;&#x9053;&#x4E3A;&#x4EC0;&#x4E48;&#xFF0C;&#x770B;&#x4E0B;&#x4E00;&#x7AE0;&#x8282;&#x7684;<strong>&#x8DEF;&#x7531;&#x548C;&#x4F20;&#x53C2;</strong></p>
 
                                 
                                 </section>
@@ -467,12 +418,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 使用模板">
+                <a href="section3.html" class="navigation navigation-prev " aria-label="Previous page: Flask">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="section2.html" class="navigation navigation-next " aria-label="Next page: Tornado">
+                <a href="../chapter2/" class="navigation navigation-next " aria-label="Next page: 路由和传参">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -483,7 +434,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.4.1","depth":2,"next":{"title":"Tornado","level":"1.4.2","depth":2,"path":"chapter1/section2.md","ref":"chapter1/section2.md","articles":[]},"previous":{"title":"使用模板","level":"1.4","depth":1,"path":"chapter1/README.md","ref":"chapter1/README.md","articles":[{"title":"Django","level":"1.4.1","depth":2,"path":"chapter1/section1.md","ref":"chapter1/section1.md","articles":[]},{"title":"Tornado","level":"1.4.2","depth":2,"path":"chapter1/section2.md","ref":"chapter1/section2.md","articles":[]},{"title":"Flask","level":"1.4.3","depth":2,"path":"chapter1/section3.md","ref":"chapter1/section3.md","articles":[]},{"title":"总结","level":"1.4.4","depth":2,"path":"chapter1/section4.md","ref":"chapter1/section4.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.md","mtime":"2018-10-10T12:14:14.373Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-17T06:11:56.748Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"总结","level":"1.4.4","depth":2,"next":{"title":"路由和传参","level":"1.5","depth":1,"path":"chapter2/README.md","ref":"chapter2/README.md","articles":[{"title":"Django","level":"1.5.1","depth":2,"path":"chapter2/section1.md","ref":"chapter2/section1.md","articles":[]},{"title":"Tornado","level":"1.5.2","depth":2,"path":"chapter2/section2.md","ref":"chapter2/section2.md","articles":[]},{"title":"Flask","level":"1.5.3","depth":2,"path":"chapter2/section3.md","ref":"chapter2/section3.md","articles":[]},{"title":"总结","level":"1.5.4","depth":2,"path":"chapter2/section4.md","ref":"chapter2/section4.md","articles":[]}]},"previous":{"title":"Flask","level":"1.4.3","depth":2,"path":"chapter1/section3.md","ref":"chapter1/section3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section4.md","mtime":"2018-10-10T11:37:16.153Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-17T06:11:56.748Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

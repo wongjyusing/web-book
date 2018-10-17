@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../chapter3/" />
+    
     
     <link rel="prev" href="section3.html" />
     
@@ -237,9 +239,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../chapter1/section4.md">
+        <li class="chapter " data-level="1.4.4" data-path="../chapter1/section4.html">
             
-                <span>
+                <a href="../chapter1/section4.html">
             
                     
                     总结
@@ -326,6 +328,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="../chapter3/">
+            
+                <a href="../chapter3/">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -371,7 +386,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x5176;&#x5B9E;&#x521A;&#x624D;&#x4E09;&#x79CD;&#x6846;&#x67B6;&#x7684;&#x6F14;&#x793A;&#x90FD;&#x662F;&#x5B9E;&#x73B0;&#x540C;&#x4E00;&#x79CD;&#x529F;&#x80FD;&#xFF1A;<strong>&#x8DEF;&#x7531;&#x4F20;&#x5165;&#x53C2;&#x6570;</strong><br>&#x8FD9;&#x91CC;&#x60F3;&#x8BF4;&#x660E;&#x7684;&#x539F;&#x7406;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x7684;&#xFF0C;&#x4E0D;&#x540C;&#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x7531;&#x8DEF;&#x7531;&#x63A7;&#x5236;&#x7684;&#x3002;<br>&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x7531;&#x6307;&#x5411;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x8DEF;&#x7531;&#x6307;&#x5B9A;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;<br>&#x800C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;<strong>&#x7D22;&#x5F15;</strong>&#x3002;<br>&#x4F8B;&#x5982;&#xFF0C;&#x73B0;&#x5728;&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x3002;<br>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;<strong>&#x7D22;&#x5F15;</strong>&#x6570;&#x636E;&#x5E93;&#x6765;&#x7D22;&#x5F15;&#x51FA;&#x5185;&#x5BB9;&#x3002;<br>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x4E2A;&#x5047;&#x8BBE;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x662F;&#x6570;&#x636E;&#x5E93;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;id&#x503C;&#x3002;  </p>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;books,py&#x7684;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tornado.ioloop
+<span class="hljs-keyword">import</span> tornado.web
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainHandler</span><span class="hljs-params">(tornado.web.RequestHandler)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self)</span>:</span>
+
+        context = <span class="hljs-string">&quot;Hello, world&quot;</span>
+        <span class="hljs-comment">#self.write(context)</span>
+        self.render(template_name=<span class="hljs-string">&apos;hello.html&apos;</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookHandler</span><span class="hljs-params">(tornado.web.RequestHandler)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self,book)</span>:</span>
+        books = {
+            <span class="hljs-string">&apos;python&apos;</span>:{<span class="hljs-string">&apos;price&apos;</span>:<span class="hljs-string">&apos;45.00&apos;</span>},
+            <span class="hljs-string">&apos;ruby&apos;</span>:{<span class="hljs-string">&apos;price&apos;</span>:<span class="hljs-string">&apos;36.00&apos;</span>},
+            <span class="hljs-string">&apos;javascript&apos;</span>:{<span class="hljs-string">&apos;price&apos;</span>:<span class="hljs-string">&apos;40.00&apos;</span>},
+        }
+        context = books[book]
+        <span class="hljs-comment">#self.write(context)</span>
+        self.render(template_name=<span class="hljs-string">&apos;book.html&apos;</span>,context=context)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    application = tornado.web.Application([
+        (<span class="hljs-string">r&quot;/&quot;</span>, MainHandler),
+        (<span class="hljs-string">r&apos;/(?P&lt;book&gt;[\w-]+)&apos;</span>,BookHandler),
+    ])
+    application.listen(<span class="hljs-number">8888</span>)
+    tornado.ioloop.IOLoop.current().start()
+</code></pre>
+<p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;book.html&#x6587;&#x4EF6;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;ltr&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{ context }}<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x4EF7;&#x683C;&#xFF1A;{{ context[&apos;price&apos;] }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;books.py&#x540E;&#x3002;<br>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;<code>http://127.0.0.1:8888/python</code><br>&#x6216;&#x8005;<code>http://127.0.0.1:8888/ruby</code><br>&#x770B;&#x4E00;&#x4E0B;&#x6548;&#x679C;&#x3002;  </p>
+
                                 
                                 </section>
                             
@@ -398,10 +460,14 @@
 
             
                 
-                <a href="section3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Flask">
+                <a href="section3.html" class="navigation navigation-prev " aria-label="Previous page: Flask">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../chapter3/" class="navigation navigation-next " aria-label="Next page: MVC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -410,7 +476,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"总结","level":"1.5.4","depth":2,"previous":{"title":"Flask","level":"1.5.3","depth":2,"path":"chapter2/section3.md","ref":"chapter2/section3.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/section4.md","mtime":"2018-10-10T08:26:47.494Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-10T11:37:14.800Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"总结","level":"1.5.4","depth":2,"next":{"title":"MVC","level":"1.6","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[]},"previous":{"title":"Flask","level":"1.5.3","depth":2,"path":"chapter2/section3.md","ref":"chapter2/section3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/section4.md","mtime":"2018-10-17T08:14:36.504Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-17T06:11:56.748Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -418,6 +484,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
