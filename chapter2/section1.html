@@ -239,9 +239,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../chapter1/section4.md">
+        <li class="chapter " data-level="1.4.4" data-path="../chapter1/section4.html">
             
-                <span>
+                <a href="../chapter1/section4.html">
             
                     
                     总结
@@ -328,6 +328,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="../chapter3/">
+            
+                <a href="../chapter3/">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -374,6 +387,49 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="django">Django</h2>
+<p>&#x5148;&#x590D;&#x5236;&#x4EE3;&#x7801;&#xFF0C;&#x8FD0;&#x884C;&#x4EE5;&#x540E;&#xFF0C;&#x5728;&#x672C;&#x7AE0;&#x8282;&#x7684;&#x603B;&#x7ED3;&#x54EA;&#x91CC;&#x518D;&#x8FDB;&#x884C;&#x8BB2;&#x89E3;&#x3002;<br>&#x8FD8;&#x662F;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x4E4B;&#x524D;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x5EFA;Django&#x9879;&#x76EE;&#x548C;&#x914D;&#x7F6E;&#x7684;&#x786E;&#x633A;&#x9EBB;&#x70E6;&#x3002;<br>&#x6539;&#x5199;hello&#x76EE;&#x5F55;&#x4E0B;&#x7684;views.py&#x6587;&#x4EF6;&#x3002;  </p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render,HttpResponse
+
+<span class="hljs-comment"># Create your views here.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">home</span><span class="hljs-params">(request)</span>:</span>
+    context = <span class="hljs-string">&apos;hello world&apos;</span>
+    <span class="hljs-comment">#return HttpResponse(context)</span>
+    <span class="hljs-keyword">return</span> render(request,<span class="hljs-string">&apos;hello.html&apos;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello</span><span class="hljs-params">(request,name)</span>:</span>
+    context = f<span class="hljs-string">&apos;&#x4F60;&#x597D;&#xFF0C;{ name }&apos;</span>
+
+    <span class="hljs-keyword">return</span> HttpResponse(context)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hi</span><span class="hljs-params">(request,name)</span>:</span>
+    context = {}
+    context[<span class="hljs-string">&apos;your_name&apos;</span>] = name
+    <span class="hljs-keyword">return</span> render(request,<span class="hljs-string">&apos;hi.html&apos;</span>,context)
+</code></pre>
+<p>&#x6539;&#x5199;urls.py  </p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path,re_path
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+urlpatterns = [
+    path(<span class="hljs-string">&apos;&apos;</span>,views.home,name=<span class="hljs-string">&apos;home&apos;</span>),
+    re_path(<span class="hljs-string">&apos;hello/(?P&lt;name&gt;[\w-]+)/&apos;</span>,views.hello),
+    re_path(<span class="hljs-string">&apos;hi/(?P&lt;name&gt;[\w-]+)/&apos;</span>,views.hi,)
+
+]
+</code></pre>
+<p>&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;templates&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;hi.html&#x7684;&#x6587;&#x4EF6;
+&#x5199;&#x5165;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;ltr&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{ your_name }}<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hi&#xFF0C;{{ your_name }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x8FD0;&#x884C;&#x9879;&#x76EE;&#x3002;<br>&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;<code>http://127.0.0.1:8000/hello/python</code><br>&#x7136;&#x540E;&#xFF0C;&#x6253;&#x5F00;<code>http://127.0.0.1:8000/hi/ruby</code><br>&#x597D;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x8BF7;&#x5927;&#x5BB6;&#x628A;&#x4E0A;&#x9762;&#x94FE;&#x63A5;&#x6700;&#x540E;&#x7684;&#x540E;&#x7F00;&#xFF0C;python&#x6216;&#x8005;ruby&#x66FF;&#x6362;&#x6210;&#x4F60;&#x7684;&#x82F1;&#x6587;&#x540D;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;  </p>
 
                                 
                                 </section>
@@ -417,7 +473,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.5.1","depth":2,"next":{"title":"Tornado","level":"1.5.2","depth":2,"path":"chapter2/section2.md","ref":"chapter2/section2.md","articles":[]},"previous":{"title":"路由和传参","level":"1.5","depth":1,"path":"chapter2/README.md","ref":"chapter2/README.md","articles":[{"title":"Django","level":"1.5.1","depth":2,"path":"chapter2/section1.md","ref":"chapter2/section1.md","articles":[]},{"title":"Tornado","level":"1.5.2","depth":2,"path":"chapter2/section2.md","ref":"chapter2/section2.md","articles":[]},{"title":"Flask","level":"1.5.3","depth":2,"path":"chapter2/section3.md","ref":"chapter2/section3.md","articles":[]},{"title":"总结","level":"1.5.4","depth":2,"path":"chapter2/section4.md","ref":"chapter2/section4.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/section1.md","mtime":"2018-10-10T11:35:32.254Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-10T11:37:14.800Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.5.1","depth":2,"next":{"title":"Tornado","level":"1.5.2","depth":2,"path":"chapter2/section2.md","ref":"chapter2/section2.md","articles":[]},"previous":{"title":"路由和传参","level":"1.5","depth":1,"path":"chapter2/README.md","ref":"chapter2/README.md","articles":[{"title":"Django","level":"1.5.1","depth":2,"path":"chapter2/section1.md","ref":"chapter2/section1.md","articles":[]},{"title":"Tornado","level":"1.5.2","depth":2,"path":"chapter2/section2.md","ref":"chapter2/section2.md","articles":[]},{"title":"Flask","level":"1.5.3","depth":2,"path":"chapter2/section3.md","ref":"chapter2/section3.md","articles":[]},{"title":"总结","level":"1.5.4","depth":2,"path":"chapter2/section4.md","ref":"chapter2/section4.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/section1.md","mtime":"2018-10-17T06:45:48.881Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-17T06:11:56.748Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -425,6 +481,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
